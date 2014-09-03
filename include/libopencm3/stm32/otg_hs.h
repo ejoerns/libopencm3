@@ -148,7 +148,7 @@
 #define OTG_HS_FIFO(x)			(&MMIO32(USB_OTG_HS_BASE + OTG_FIFO(x)))
 
 /* Global CSRs */
-/* OTG_HS USB control registers (OTG_FS_GOTGCTL) */
+/* OTG_HS USB control registers (OTG_HS_GOTGCTL) */
 #define OTG_HS_GOTGCTL_BSVLD		(1 << 19)
 #define OTG_HS_GOTGCTL_ASVLD		(1 << 18)
 #define OTG_HS_GOTGCTL_DBCT		(1 << 17)
@@ -160,12 +160,12 @@
 #define OTG_HS_GOTGCTL_SRQ		(1 << 1)
 #define OTG_HS_GOTGCTL_SRQSCS		(1 << 0)
 
-/* OTG_FS AHB configuration register (OTG_HS_GAHBCFG) */
+/* OTG_HS AHB configuration register (OTG_HS_GAHBCFG) */
 #define OTG_HS_GAHBCFG_GINT		0x0001
 #define OTG_HS_GAHBCFG_TXFELVL		0x0080
 #define OTG_HS_GAHBCFG_PTXFELVL		0x0100
 
-/* OTG_FS USB configuration register (OTG_HS_GUSBCFG) */
+/* OTG_HS USB configuration register (OTG_HS_GUSBCFG) */
 #define OTG_HS_GUSBCFG_TOCAL		0x00000003
 #define OTG_HS_GUSBCFG_SRPCAP		0x00000100
 #define OTG_HS_GUSBCFG_HNPCAP		0x00000200
@@ -178,7 +178,7 @@
 #define OTG_HS_GUSBCFG_CTXPKT		0x80000000
 #define OTG_HS_GUSBCFG_PHYSEL		(1 << 6)
 
-/* OTG_FS reset register (OTG_HS_GRSTCTL) */
+/* OTG_HS reset register (OTG_HS_GRSTCTL) */
 #define OTG_HS_GRSTCTL_AHBIDL		(1 << 31)
 /* Bits 30:11 - Reserved */
 #define OTG_HS_GRSTCTL_TXFNUM_MASK	(0x1f << 6)
@@ -189,7 +189,7 @@
 #define OTG_HS_GRSTCTL_HSRST		(1 << 1)
 #define OTG_HS_GRSTCTL_CSRST		(1 << 0)
 
-/* OTG_FS interrupt status register (OTG_HS_GINTSTS) */
+/* OTG_HS interrupt status register (OTG_HS_GINTSTS) */
 #define OTG_HS_GINTSTS_WKUPINT		(1 << 31)
 #define OTG_HS_GINTSTS_SRQINT		(1 << 30)
 #define OTG_HS_GINTSTS_DISCINT		(1 << 29)
@@ -221,7 +221,7 @@
 #define OTG_HS_GINTSTS_MMIS		(1 << 1)
 #define OTG_HS_GINTSTS_CMOD		(1 << 0)
 
-/* OTG_FS interrupt mask register (OTG_HS_GINTMSK) */
+/* OTG_HS interrupt mask register (OTG_HS_GINTMSK) */
 #define OTG_HS_GINTMSK_MMISM		0x00000002
 #define OTG_HS_GINTMSK_OTGINT		0x00000004
 #define OTG_HS_GINTMSK_SOFM		0x00000008
@@ -249,7 +249,7 @@
 #define OTG_HS_GINTMSK_SRQIM		0x40000000
 #define OTG_HS_GINTMSK_WUIM		0x80000000
 
-/* OTG_FS Receive Status Pop Register (OTG_HS_GRXSTSP) */
+/* OTG_HS Receive Status Pop Register (OTG_HS_GRXSTSP) */
 /* Bits 31:25 - Reserved */
 #define OTG_HS_GRXSTSP_FRMNUM_MASK		(0xf << 21)
 #define OTG_HS_GRXSTSP_PKTSTS_MASK		(0xf << 17)
@@ -266,7 +266,7 @@
 #define OTG_HS_GRXSTSP_BCNT_MASK		(0x7ff << 4)
 #define OTG_HS_GRXSTSP_EPNUM_MASK		(0xf << 0)
 
-/* OTG_FS general core configuration register (OTG_HS_GCCFG) */
+/* OTG_HS general core configuration register (OTG_HS_GCCFG) */
 /* Bits 31:21 - Reserved */
 #define OTG_HS_GCCFG_SOFOUTEN		(1 << 20)
 #define OTG_HS_GCCFG_VBUSBSEN		(1 << 19)
@@ -277,7 +277,7 @@
 
 
 /* Device-mode CSRs */
-/* OTG_FS device control register (OTG_HS_DCTL) */
+/* OTG_HS device control register (OTG_HS_DCTL) */
 /* Bits 31:12 - Reserved */
 #define OTG_HS_DCTL_POPRGDNE		(1 << 11)
 #define OTG_HS_DCTL_CGONAK		(1 << 10)
@@ -289,13 +289,13 @@
 #define OTG_HS_DCTL_SDIS		(1 << 1)
 #define OTG_HS_DCTL_RWUSIG		(1 << 0)
 
-/* OTG_FS device configuration register (OTG_HS_DCFG) */
+/* OTG_HS device configuration register (OTG_HS_DCFG) */
 #define OTG_HS_DCFG_DSPD		0x0003
 #define OTG_HS_DCFG_NZLSOHSK		0x0004
 #define OTG_HS_DCFG_DAD			0x07F0
 #define OTG_HS_DCFG_PFIVL		0x1800
 
-/* OTG_FS Device IN Endpoint Common Interrupt Mask Register (OTG_HS_DIEPMSK) */
+/* OTG_HS Device IN Endpoint Common Interrupt Mask Register (OTG_HS_DIEPMSK) */
 /* Bits 31:10 - Reserved */
 #define OTG_HS_DIEPMSK_BIM		(1 << 9)
 #define OTG_HS_DIEPMSK_TXFURM		(1 << 8)
@@ -308,7 +308,7 @@
 #define OTG_HS_DIEPMSK_EPDM		(1 << 1)
 #define OTG_HS_DIEPMSK_XFRCM		(1 << 0)
 
-/* OTG_FS Device OUT Endpoint Common Interrupt Mask Register (OTG_HS_DOEPMSK) */
+/* OTG_HS Device OUT Endpoint Common Interrupt Mask Register (OTG_HS_DOEPMSK) */
 /* Bits 31:10 - Reserved */
 #define OTG_HS_DOEPMSK_BOIM		(1 << 9)
 #define OTG_HS_DOEPMSK_OPEM		(1 << 8)
@@ -321,7 +321,7 @@
 #define OTG_HS_DOEPMSK_EPDM		(1 << 1)
 #define OTG_HS_DOEPMSK_XFRCM		(1 << 0)
 
-/* OTG_FS Device Control IN Endpoint 0 Control Register (OTG_HS_DIEPCTL0) */
+/* OTG_HS Device Control IN Endpoint 0 Control Register (OTG_HS_DIEPCTL0) */
 #define OTG_HS_DIEPCTL0_EPENA		(1 << 31)
 #define OTG_HS_DIEPCTL0_EPDIS		(1 << 30)
 /* Bits 29:28 - Reserved */
@@ -342,7 +342,7 @@
 #define OTG_HS_DIEPCTL0_MPSIZ_16	(0x2 << 0)
 #define OTG_HS_DIEPCTL0_MPSIZ_8		(0x3 << 0)
 
-/* OTG_FS Device Control OUT Endpoint 0 Control Register (OTG_HS_DOEPCTL0) */
+/* OTG_HS Device Control OUT Endpoint 0 Control Register (OTG_HS_DOEPCTL0) */
 #define OTG_HS_DOEPCTL0_EPENA		(1 << 31)
 #define OTG_HS_DOEPCTL0_EPDIS		(1 << 30)
 /* Bits 29:28 - Reserved */
@@ -363,7 +363,7 @@
 #define OTG_HS_DOEPCTL0_MPSIZ_16	(0x2 << 0)
 #define OTG_HS_DOEPCTL0_MPSIZ_8		(0x3 << 0)
 
-/* OTG_FS Device IN Endpoint Interrupt Register (OTG_HS_DIEPINTx) */
+/* OTG_HS Device IN Endpoint Interrupt Register (OTG_HS_DIEPINTx) */
 /* Bits 31:8 - Reserved */
 #define OTG_HS_DIEPINTX_TXFE		(1 << 7)
 #define OTG_HS_DIEPINTX_INEPNE		(1 << 6)
@@ -374,7 +374,7 @@
 #define OTG_HS_DIEPINTX_EPDISD		(1 << 1)
 #define OTG_HS_DIEPINTX_XFRC		(1 << 0)
 
-/* OTG_FS Device IN Endpoint Interrupt Register (OTG_HS_DOEPINTx) */
+/* OTG_HS Device IN Endpoint Interrupt Register (OTG_HS_DOEPINTx) */
 /* Bits 31:7 - Reserved */
 #define OTG_HS_DOEPINTX_B2BSTUP		(1 << 6)
 /* Bit 5 - Reserved */
@@ -384,7 +384,7 @@
 #define OTG_HS_DOEPINTX_EPDISD		(1 << 1)
 #define OTG_HS_DOEPINTX_XFRC		(1 << 0)
 
-/* OTG_FS Device OUT Endpoint 0 Transfer Size Register (OTG_HS_DOEPTSIZ0) */
+/* OTG_HS Device OUT Endpoint 0 Transfer Size Register (OTG_HS_DOEPTSIZ0) */
 /* Bit 31 - Reserved */
 #define OTG_HS_DIEPSIZ0_STUPCNT_1	(0x1 << 29)
 #define OTG_HS_DIEPSIZ0_STUPCNT_2	(0x2 << 29)
