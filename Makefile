@@ -91,7 +91,7 @@ install: lib
 html doc:
 	$(Q)$(MAKE) -C doc html
 
-clean: $(IRQ_DEFN_FILES:=.cleanhdr) $(LIB_DIRS:=.clean) $(EXAMPLE_DIRS:=.clean) doc.clean styleclean
+clean: $(IRQ_DEFN_FILES:=.cleanhdr) $(LIB_DIRS:=.clean) $(EXAMPLE_DIRS:=.clean) styleclean
 
 %.clean:
 	$(Q)if [ -d $* ]; then \
