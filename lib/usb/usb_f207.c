@@ -68,7 +68,7 @@ static usbd_device *stm32f207_usbd_init(void)
 	OTG_HS_GUSBCFG |= OTG_HS_GUSBCFG_FDMOD | OTG_HS_GUSBCFG_TRDT_MASK;
 
 	/* Full speed device. */
-	OTG_HS_DCFG |= OTG_HS_DCFG_DSPD;
+	OTG_HS_DCFG |= OTG_HS_DCFG_DSPD_FS_INT;
 
 	/* Restart the PHY clock. */
 	OTG_HS_PCGCCTL = 0;

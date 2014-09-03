@@ -290,10 +290,20 @@
 #define OTG_HS_DCTL_RWUSIG		(1 << 0)
 
 /* OTG_HS device configuration register (OTG_HS_DCFG) */
-#define OTG_HS_DCFG_DSPD		0x0003
-#define OTG_HS_DCFG_NZLSOHSK		0x0004
-#define OTG_HS_DCFG_DAD			0x07F0
-#define OTG_HS_DCFG_PFIVL		0x1800
+/* Bits 26:31- Reserved */
+#define OTG_HS_DCFG_PERSCHIVL_MASK	(0x3 << 24)
+#define OTG_HS_DCFG_PERSCHIVL_25	(0x0 << 24)
+#define OTG_HS_DCFG_PERSCHIVL_50	(0x1 << 24)
+#define OTG_HS_DCFG_PERSCHIVL_75	(0x2 << 24)
+/* Bits 13:23 - Reserved */
+#define OTG_HS_DCFG_PFIVL		(0x2 << 11)
+#define OTG_HS_DCFG_DAD_MASK		(0x7F << 4)
+/* Bit 3 - Reserved */
+#define OTG_HS_DCFG_NZLSOHSK		(1 << 2)
+#define OTG_HS_DCFG_DSPD_MASK		(0x3 << 0)
+#define OTG_HS_DCFG_DSPD_HS		(0x0 << 0)
+#define OTG_HS_DCFG_DSPD_FS_EXT		(0x1 << 0)
+#define OTG_HS_DCFG_DSPD_FS_INT		(0x3 << 0)
 
 /* OTG_HS Device IN Endpoint Common Interrupt Mask Register (OTG_HS_DIEPMSK) */
 /* Bits 31:10 - Reserved */
