@@ -1,4 +1,15 @@
-/* This provides unification of code over STM32F subfamilies */
+/** @defgroup can_defines CAN Defines
+
+@brief <b>Defined Constants and Types for the STM32F4xx CAN </b>
+
+@ingroup STM32F4xx_defines
+
+@version 1.0.0
+
+@date 03 September 2014
+
+LGPL License Terms @ref lgpl_license
+ */
 
 /*
  * This file is part of the libopencm3 project.
@@ -17,18 +28,10 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/cm3/common.h>
-#include <libopencm3/stm32/memorymap.h>
+#ifndef LIBOPENCM3_CAN_H
+#define LIBOPENCM3_CAN_H
 
-#if defined(STM32F0)
-#       include <libopencm3/stm32/f0/can.h>
-#elif defined(STM32F1)
-#       include <libopencm3/stm32/f1/can.h>
-#elif defined(STM32F3)
-#       include <libopencm3/stm32/f3/can.h>
-#elif defined(STM32F4)
-#       include <libopencm3/stm32/f4/can.h>
-#else
-#       error "stm32 family not defined."
+#include <libopencm3/stm32/common/can_common_f1234.h>
+
 #endif
 

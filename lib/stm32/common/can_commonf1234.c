@@ -1,14 +1,6 @@
-/** @defgroup can_file CAN
-
-@ingroup STM32F_files
-
-@brief <b>libopencm3 STM32Fxxx CAN</b>
-
-@version 1.0.0
+/** @addtogroup can_file
 
 @author @htmlonly &copy; @endhtmlonly 2010 Piotr Esden-Tempski <piotr@esden.net>
-
-@date 12 November 2012
 
 Devices can have up to two CAN peripherals. The peripherals support up to 1MBit
 transmission rate. The peripheral has several filters for incoming messages that
@@ -35,17 +27,10 @@ LGPL License Terms @ref lgpl_license
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/stm32/can.h>
+/**@{*/
 
-#if defined(STM32F1)
-#	include <libopencm3/stm32/f1/rcc.h>
-#elif defined(STM32F2)
-#	include <libopencm3/stm32/f2/rcc.h>
-#elif defined(STM32F4)
-#	include <libopencm3/stm32/f4/rcc.h>
-#else
-#	error "stm32 family not defined."
-#endif
+#include <libopencm3/stm32/can.h>
+#include <libopencm3/stm32/rcc.h>
 
 /* Timeout for CAN INIT acknowledge
  * this value is difficult to define.
@@ -555,3 +540,6 @@ bool can_available_mailbox(uint32_t canport)
 {
 	return CAN_TSR(canport) & (CAN_TSR_TME0 | CAN_TSR_TME1 | CAN_TSR_TME2);
 }
+
+/**@}*/
+
