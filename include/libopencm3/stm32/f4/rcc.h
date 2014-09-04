@@ -276,25 +276,31 @@
 
 /* --- RCC_AHB1ENR values ------------------------------------------------- */
 
+/* Bit 31 reserved */
 #define RCC_AHB1ENR_OTGHSULPIEN			(1 << 30)
 #define RCC_AHB1ENR_OTGHSEN			(1 << 29)
 #define RCC_AHB1ENR_ETHMACPTPEN			(1 << 28)
 #define RCC_AHB1ENR_ETHMACRXEN			(1 << 27)
 #define RCC_AHB1ENR_ETHMACTXEN			(1 << 26)
 #define RCC_AHB1ENR_ETHMACEN			(1 << 25)
+/* Bit 24:32 reserved */
 #define RCC_AHB1ENR_DMA2EN			(1 << 22)
 #define RCC_AHB1ENR_DMA1EN			(1 << 21)
+#define RCC_AHB1ENR_CCMDATARAMEN		(1 << 20)
+/* Bit 19 reserved */
 #define RCC_AHB1ENR_BKPSRAMEN			(1 << 18)
+/* Bit 17:13 reserved */
 #define RCC_AHB1ENR_CRCEN			(1 << 12)
-#define RCC_AHB1ENR_IOPIEN			(1 << 8)
-#define RCC_AHB1ENR_IOPHEN			(1 << 7)
-#define RCC_AHB1ENR_IOPGEN			(1 << 6)
-#define RCC_AHB1ENR_IOPFEN			(1 << 5)
-#define RCC_AHB1ENR_IOPEEN			(1 << 4)
-#define RCC_AHB1ENR_IOPDEN			(1 << 3)
-#define RCC_AHB1ENR_IOPCEN			(1 << 2)
-#define RCC_AHB1ENR_IOPBEN			(1 << 1)
-#define RCC_AHB1ENR_IOPAEN			(1 << 0)
+/* Bit 11:9 reserved */
+#define RCC_AHB1ENR_GPIOPIEN			(1 << 8)
+#define RCC_AHB1ENR_GPIOPHEN			(1 << 7)
+#define RCC_AHB1ENR_GPIOPGEN			(1 << 6)
+#define RCC_AHB1ENR_GPIOPFEN			(1 << 5)
+#define RCC_AHB1ENR_GPIOPEEN			(1 << 4)
+#define RCC_AHB1ENR_GPIOPDEN			(1 << 3)
+#define RCC_AHB1ENR_GPIOPCEN			(1 << 2)
+#define RCC_AHB1ENR_GPIOPBEN			(1 << 1)
+#define RCC_AHB1ENR_GPIOPAEN			(1 << 0)
 
 /* --- RCC_AHB2ENR values ------------------------------------------------- */
 
